@@ -14,8 +14,7 @@ export class DashboardComponent implements OnInit {
     script.type = "text/javascript";
     script.src =
       "https://static.vidyo.io/4.1.12.8/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded&webrtc=1&plugin=0";
-
-    // "https://static.vidyo.io/latest/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded&webrtc=1&plugin=0";
+    //"https://static.vidyo.io/latest/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded&webrtc=1&plugin=0";
     document.getElementsByTagName("head")[0].appendChild(script);
 
     this.listenEvent();
@@ -31,7 +30,7 @@ export class DashboardComponent implements OnInit {
   }
 
   setupVidyoClient(VC) {
-    console.log("aqui brother", this.vidyoConnector);
+    console.log("vc object", this.vidyoConnector);
     VC.CreateVidyoConnector({
       viewId: "renderer", // Div ID where the composited video will be rendered, see VidyoConnector.html
       viewStyle: "VIDYO_CONNECTORVIEWSTYLE_Default", // Visual style of the composited renderer
@@ -45,7 +44,7 @@ export class DashboardComponent implements OnInit {
           .Connect({
             host: "prod.vidyo.io",
             token:
-              "cHJvdmlzaW9uAHVzZXIxQGNmYjEwNC52aWR5by5pbwA2MzcxNjE5MjYxNQAAZWQ2MzlhZDkyMzFlOTVhNjM2YTk5NzliZmUzMGM4MzM2YWRhODU4MGI3NTM4NzYzZTU3OWVlZDBjZDFhZjgzY2U3ZGJmM2Y3NDU3MjQ0OTEwM2E2NmQzMzIyOTg5YWJi",
+              "cHJvdmlzaW9uAHVzZXIxQGNmYjEwNC52aWR5by5pbwA2MzcxNjE5NzQ0MwAAOTQyY2I1MWMyNDM5ZGYyOTAwZGYyMDJjZjBmM2I3ZDIzNTI5OTQ0YTVjOWQ4OTc2MzM3NzI4ZjAwZWNmZmNjMWIyYWU5ZGUyZmEzYWUxNGM5M2YzZWQ0ZGVmY2M5YmJi",
             displayName: "John Smith",
             resourceId: "JohnSmithRoom",
             // Define handlers for connection events.
@@ -62,6 +61,7 @@ export class DashboardComponent implements OnInit {
           .then(function(status) {
             if (status) {
               console.log("ConnectCall Success");
+              alert(status);
             } else {
               console.error("ConnectCall Failed");
             }
@@ -76,7 +76,8 @@ export class DashboardComponent implements OnInit {
   }
 
   disconnectVidyo() {
-    alert("amonos alv");
+    alert("fire disconnect event");
+    alert(this.vidyoConnector);
     this.vidyoConnector.Disconnect();
   }
 }
