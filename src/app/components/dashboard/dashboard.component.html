@@ -1,2 +1,18 @@
-<div id="renderer" style="width: 100%; height: 700px;"></div>
-<button (click)="disconnectVidyo()">Disconnect from call</button>
+<div id="renderer"></div>
+<div id="toolbarLeft" class="toolbar">
+</div>
+<div id="toolbarRight" class="toolbar ">
+  <span id="clientVersion"></span>
+</div>
+<div id="toolbarCenter" class="toolbar">
+  <!-- This button toggles the camera privacy on or off. -->
+  <button id="cameraButton" title="Camera Privacy" class="toolbarButton cameraOn" (click)="togglePreview()"></button>
+
+  <!-- This button joins and leaves the conference. -->
+  <button id="joinLeaveButton" title="Join Conference" class="toolbarButton callStart" (click)="toggleConnect()"></button>
+
+  <!-- This button mutes and unmutes the users' microphone. -->
+  <button id="microphoneButton" title="Microphone Privacy" class="toolbarButton microphoneOn"></button>
+</div>
+<!-- <button (click)="toggleConnect()">Disconnect from call</button>
+ -->

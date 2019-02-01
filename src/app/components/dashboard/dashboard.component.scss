@@ -1,0 +1,71 @@
+#renderer {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 60px;
+  z-index: 0;
+  left: 0px;
+}
+
+.toolbar {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 60px;
+}
+
+#toolbarLeft {
+  background-color: rgb(19, 38, 58);
+  text-align: left;
+}
+
+#toolbarCenter {
+  text-align: center;
+}
+
+#toolbarRight {
+  text-align: right;
+}
+
+.toolbarButton {
+  width: 60px;
+  height: 60px;
+  background-size: 32px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(19, 38, 58);
+  border: 0;
+}
+
+#connectionStatus {
+  color: white;
+  line-height: 50px;
+  margin: 0px 10px;
+  position: absolute;
+  right: 0px;
+  bottom: 10px;
+}
+
+.cameraOn {
+  background-image: url('../../../assets/img/cameraOn.png');
+}
+
+.cameraOff {
+  background-image: url('../../../assets/img/cameraOff.png');
+}
+
+.microphoneOn {
+  background-image: url('../../../assets/img/microphoneOn.png');
+}
+
+.microphoneOff {
+  background-image: url('../../../assets/img/microphoneOff.png');
+}
+
+.callStart {
+  background-image: url('../../../assets/img/callStart.png');
+}
+
+.callEnd {
+  background-image: url('../../../assets/img/callEnd.png');
+}
